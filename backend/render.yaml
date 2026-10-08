@@ -1,0 +1,12 @@
+# Render Blueprint (optional). You can also create the service by hand in the dashboard.
+services:
+  - type: web
+    name: sprint12-chat-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: CLIENT_URL
+        sync: false   # set to your Vercel URL, e.g. https://your-app.vercel.app
